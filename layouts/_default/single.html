@@ -2,16 +2,17 @@
 
 <body>
 <div id="layout" class="pure-g">
-<article class="pure-u-1">
+  <div class="pure-u-1">
 {{ partial "brand.html" . }}
+<article>
 {{ partial "content.header.html" . }}
 {{ partial "toc.html" . }}
 <section>{{ .Content }}</section>
 <section>
-  {{ partial "disqus.html" . }}
   {{ partial "footer.html" . }}
 </section>
 </article>
+</div>
 </div>
 </body>
 </html>

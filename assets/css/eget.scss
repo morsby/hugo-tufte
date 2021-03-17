@@ -1,0 +1,62 @@
+$contrast: #EF767A;
+
+body {
+    //background-color: #FAF9F6;
+}
+
+.no-tufte-underline:link {
+    background: unset;
+    text-shadow: unset;
+}
+
+header.brand {
+    display:flex;
+ 
+    .site-title {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $contrast;
+        display: block;
+        border-right:1px solid #111;
+        padding: .5rem .5rem 0rem 0;
+        margin: .75rem .5rem .5rem 0;
+        max-width: 45rem;
+        font-size: .9rem;
+
+        a {
+            text-decoration: none;
+            @extend .no-tufte-underline
+        }
+    }
+}
+
+nav.menu ul {
+    display:flex;
+    max-width: 100%;
+    width:unset;
+}
+
+footer.page-footer .brewkit {
+    p {
+        width:100%;
+    }
+
+    a {
+        @extend .no-tufte-underline;
+        color: #aaa;
+
+        &:hover {
+            transition: 0.3s;
+            color:$contrast;
+        }
+    }
+}
+
+article:first-of-type {
+    padding-top:0;
+}
+
+article a:hover {
+    transition: 0.3s;
+    color:$contrast;
+}
