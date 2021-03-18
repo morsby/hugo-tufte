@@ -1,4 +1,4 @@
-{{ .Title  }}
+{{ .Title }}
 <!-- {{ template "_internal/pagination.html" }} -->
 Hello this is a list of content.
 {{ .TableOfContents }}
@@ -7,7 +7,7 @@ Hello this is a list of content.
 
 <ul>
   <li>PageNumber: {{ $paginator.PageNumber }}</li>
-  <li>URL: {{ $paginator.URL}}</li>
+  <li>URL: {{ $paginator.URL }}</li>
   <li>Pages: {{ $paginator.Pages }}</li>
   <li>TotalPages: {{ $paginator.TotalPages }}</li>
 </ul>
@@ -15,7 +15,7 @@ Hello this is a list of content.
 {{ range $paginator.PageGroups }}
   <h2>{{ .Key }}</h2>
   {{ range .Pages }}
-    <br/>
-    <a href="{{ .RelPermalink }}">{{.Title}}</a>
+    <br />
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
   {{ end }}
 {{ end }}

@@ -1,18 +1,7 @@
-{{ partial "header.html" . }}
-
-<body>
-<div id="layout" class="pure-g">
-  <div class="pure-u-1">
-{{ partial "brand.html" . }}
-<article>
-{{ partial "content.header.html" . }}
-{{ partial "toc.html" . }}
-<section>{{ .Content }}</section>
-<section>
-  {{ partial "footer.html" . }}
-</section>
-</article>
-</div>
-</div>
-</body>
-</html>
+{{ define "main" }}
+  <article>
+    {{ partial "content.header.html" . }}
+    {{ partial "toc.html" . }}
+    <section>{{ .Content }}</section>
+  </article>
+{{ end }}

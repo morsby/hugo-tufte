@@ -1,58 +1,83 @@
-$contrast: #EF767A;
+$contrast: #ef767a;
 
 .no-tufte-underline:link {
-    background: unset;
-    text-shadow: unset;
+  background: unset;
+  text-shadow: unset;
 }
 
 header.brand {
-    display:flex;
- 
-    .site-title {
-        text-transform: uppercase;
-        font-weight: bold;
-        color: $contrast;
-        display: block;
-        border-right:1px solid #111;
-        padding: .5rem .5rem 0rem 0;
-        margin: .75rem .5rem .5rem 0;
-        max-width: 45rem;
-        font-size: .9rem;
+  display: flex;
 
-        a {
-            text-decoration: none;
-            @extend .no-tufte-underline
-        }
+  .site-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $contrast;
+    display: block;
+    border-right: 1px solid #111;
+    padding: 0.5rem 0.5rem 0rem 0;
+    margin: 0.75rem 0.5rem 0.5rem 0;
+    max-width: 45rem;
+    font-size: 0.9rem;
+
+    a {
+      text-decoration: none;
+      @extend .no-tufte-underline;
+
+      &:hover {
+        color: lighten($contrast, 10%);
+      }
     }
+  }
 }
 
 nav.menu ul {
-    display:flex;
-    max-width: 100%;
-    width:unset;
+  display: flex;
+  max-width: 100%;
+  width: unset;
 }
 
-footer.page-footer .brewkit {
+footer.page-footer {
+  margin-top: 0;
+  .brewkit {
     p {
-        width:100%;
+      width: 100%;
     }
 
     a {
-        @extend .no-tufte-underline;
-        color: #aaa;
+      @extend .no-tufte-underline;
+      color: #aaa;
 
-        &:hover {
-            transition: 0.3s;
-            color:$contrast;
-        }
+      &:hover {
+        transition: 0.3s;
+        color: $contrast;
+      }
     }
+  }
 }
 
 article:first-of-type {
-    padding-top:0;
+  padding-top: 0;
 }
 
-article a:hover {
-    transition: 0.3s;
-    color:$contrast;
+article a {
+  transition: 0.3s;
+
+  &:hover {
+    color: $contrast;
+  }
+}
+
+pre {
+  background-color: rgb(236, 236, 231); // default background: rgb(255,255,248)
+  code {
+    display: inline-block;
+    width: unset;
+    padding-left: 0;
+    margin: 0 2.5% 0 0;
+  }
+}
+
+.note-id {
+  white-space: nowrap;
+  margin: auto -0.5ch;
 }

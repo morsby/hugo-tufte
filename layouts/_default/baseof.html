@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+  {{ block "head" . }}
+    <head>
+      <title>{{ .Site.Title }} - {{ .Title }}</title>
+      <meta charset="utf-8" />
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="description" content="{{ .Description }}" />
+      <meta name="keywords" content="{{ range .Keywords }}{{ . }},{{ end }}" />
+      <meta name="author" content="{{ .Site.Author }}" />
+      {{ hugo.Generator }}
+
+      <!-- Various includes -->
+      <!-- Load MathJax, if necessary. -->
+      {{ if .Params.math }}
+        {{ partial "math.html" . }}
+      {{ end }}
+
+      <!-- Styling -->
+      {{ $pure := resources.Get "/css/pure.css" }}
+      {{ $tufte := resources.Get "/css/tufte.css" }}
+      {{ $hugoTufte := resources.Get "/css/hugo-tufte.css" }}
+      {{ $hugoTufteOverride := resources.Get "/css/hugo-tufte-override.css" }}
+      {{ $eget := resources.Get "/css/eget.scss" | resources.ToCSS }}
+      {{ $css := slice $pure $tufte $hugoTufte $hugoTufteOverride $eget | resources.Concat "css/main.css" | resources.Minify | resources.Fingerprint }}
+      <link rel="stylesheet" href="{{ $css.Permalink }}" />
+    </head>
+  {{ end }}
+
+  <body>
+    <div id="layout" class="pure-g">
+      <div class="pure-u-1">
+        <!-- Top navigation including brand -->
+        {{ block "header" . }}
+          <header class="brand">
+            <div class="site-title">
+              <a href="{{ .Site.BaseURL }}">{{ .Site.Title }} </a>
+            </div>
+            <nav class="menu">
+              <ul>
+                {{ range .Site.Menus.nav }}
+                  <li><a href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a></li>
+                {{ end }}
+              </ul>
+            </nav>
+          </header>
+        {{ end }}
+        <main>
+          {{ block "main" . }} {{ end }}
+        </main>
+        <footer class="page-footer">
+          <hr />
+          <ul class="page-footer-menu">
+            {{ range .Site.Menus.footer }}
+              <li><a href="{{ .URL }}">{{ .Pre }}{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+
+          <div class="brewkit">
+            <p>
+              Siden er brygget på koffein, kærlighed og
+              <a href="//gohugo.io">Hugo</a>.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
