@@ -113,6 +113,22 @@ support all the features present in the
     `{{< sidenote >}}...{{< /sidenote >}}`
   - **Example**: `{{< sidenote >}}Some sidenote{{< /sidenote >}}`
 
+- `figure``
+
+  - **Description**: Display a figure.
+  - **Usage**: Accepts parameters:
+    - type: "full" | "margin" | null
+    - src: image source
+    - title
+    - caption
+    - link
+    - attr
+    - attrlink
+    - label: identifier
+    - class: css class
+
+  {{< figure type="full" src="http://placekitten.com/5000/1200" caption="A cat looking dabbily. Maybe at the camera, maybe not." width="5000" height="600" title="A cat." alt="A cat" >}}
+
 ## Templates
 
 TODO

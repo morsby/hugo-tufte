@@ -67,17 +67,41 @@ article a {
   }
 }
 
-pre {
-  background-color: rgb(236, 236, 231); // default background: rgb(255,255,248)
-  code {
-    display: inline-block;
-    width: unset;
-    padding-left: 0;
-    margin: 0 2.5% 0 0;
+div.highlight {
+  width: 90%;
+
+  pre {
+    background-color: rgb(
+      236,
+      236,
+      231
+    ); // default background: rgb(255,255,248)
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1% 0 1% 2.5%;
+    code {
+      width: inherit;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+    box-sizing: border-box;
+    pre {
+      padding: 0;
+    }
   }
 }
 
-.note-id {
-  white-space: nowrap;
-  margin: auto -0.5ch;
+div.img {
+  width: 55%;
+  img {
+    display: block;
+  }
+}
+figure {
+  text-align: right;
 }
