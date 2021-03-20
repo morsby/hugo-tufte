@@ -108,6 +108,7 @@ support all the features present in the
   - **Example**: `{{< marginnote >}}Some marginnote{{< /marginnote>}}`
 
 - `sidenote`
+
   - **Description**: Wrap text to produce an automatically numbered sidenote.
   - **Usage**: identical to `marginnote`
     `{{< sidenote >}}...{{< /sidenote >}}`
