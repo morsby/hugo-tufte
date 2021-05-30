@@ -25,6 +25,9 @@
       {{ $eget := resources.Get "/css/eget.scss" | resources.ToCSS }}
       {{ $css := slice $pure $tufte $hugoTufte $hugoTufteOverride $eget | resources.Concat "css/main.css" | resources.Minify | resources.Fingerprint }}
       <link rel="stylesheet" href="{{ $css.Permalink }}" />
+      <script type="module">
+        import hotwiredTurbo from 'https://cdn.skypack.dev/@hotwired/turbo';
+      </script>
     </head>
   {{ end }}
 
