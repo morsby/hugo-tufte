@@ -1,8 +1,11 @@
-$contrast: #ef767a;
+@import "hugo-tufte-override";
+@import "cards";
 
-.no-tufte-underline:link {
-  background: unset;
-  text-shadow: unset;
+h4 {
+  font-size: 1.6rem;
+  margin-top: 1.6rem;
+  margin-bottom: 0;
+  line-height: 1;
 }
 
 header.brand {
@@ -59,11 +62,14 @@ article:first-of-type {
   padding-top: 0;
 }
 
-article a {
-  transition: 0.3s;
+article,
+section {
+  a {
+    transition: 0.3s;
 
-  &:hover {
-    color: $contrast;
+    &:hover {
+      color: $contrast;
+    }
   }
 }
 
@@ -94,52 +100,5 @@ div.highlight {
     pre {
       padding: 0;
     }
-  }
-}
-
-img {
-  max-width: 100% !important;
-  width: auto !important;
-}
-
-.marginnote {
-  img {
-    display: block;
-    width: auto;
-    height: auto;
-  }
-
-  figcaption {
-    margin: 0;
-    float: none;
-    max-width: 100%;
-  }
-}
-
-.sidenote,
-.marginnote,
-figcaption {
-  font-size: 1.1rem;
-
-  p {
-    font-size: inherit;
-    margin: 0;
-    width: 100%;
-  }
-}
-
-figure.fullwidth {
-  figcaption {
-    float: none;
-    clear: unset;
-    display: flex;
-    max-width: 100%;
-    margin: 0;
-  }
-
-  p {
-    margin: 0;
-    max-width: 100%;
-    width: 100%;
   }
 }

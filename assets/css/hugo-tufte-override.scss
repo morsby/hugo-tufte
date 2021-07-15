@@ -1,0 +1,51 @@
+.no-tufte-underline:link {
+  background: unset;
+  text-shadow: unset;
+}
+
+img {
+  max-width: 100% !important;
+  width: auto !important;
+}
+
+.marginnote {
+  img {
+    display: block;
+    width: auto;
+    height: auto;
+  }
+
+  figcaption {
+    margin: 0;
+    float: none;
+    max-width: 100%;
+  }
+} 
+
+.sidenote,
+.marginnote,
+figcaption {
+  font-size: 1.1rem;
+
+  p {
+    font-size: inherit;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+figure.fullwidth {
+  figcaption {
+    float: none;
+    clear: unset;
+    display: flex;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}

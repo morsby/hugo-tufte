@@ -1,9 +1,7 @@
-+++
-math = false 
-meta = true
-toc = true
-author = "AUTHOR NAME"
-
-+++
-
-<!--more-->
+---
+title: "{{ replace .Name "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+math: false 
+toc: false
+---

@@ -1,0 +1,11 @@
+<div class="card">
+  <div class="card-header">
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </div>
+  <div class="card-text">{{ .Summary }}</div>
+  {{ range first 1 (.Resources.ByType "image") }}
+    <div class="card-image">
+      <img src="{{ .Permalink }}" />
+    </div>
+  {{ end }}
+</div>
